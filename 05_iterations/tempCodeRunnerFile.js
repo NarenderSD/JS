@@ -1,6 +1,4 @@
-let index = 0
-// while (index <= 10) {
-//     console.log(`Value of index is ${index}`);
-//     index = index + 2
-    
-// }
+const greetings = "Namaste Duniya"
+for (const greet of greetings) {
+    console.log(`Each char is ${greet}`);
+}
