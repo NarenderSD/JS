@@ -12,19 +12,27 @@ const randomColor = function(){
 
 // console.log(Math.floor(Math.random() * 16));
 
-const startChangingColor = function(){
-    setInterval(changBgColor, 1000);
+let intervalId;
 
-    function changBgColor(){
+const startChangingColor = function () {
+    if(!intervalId){
+        intervalId = setInterval(changBgColor, 1000);
+
+    }
+    function changBgColor() {
         document.body.style.backgroundColor = randomColor();
 
     }
     
 };
-const stopChangingColor = function(){};
 
-document.querySelector("#start").addEventListener
-('click1', startChangingColor)
+const stopChangingColor = function() {
+    clearInterval(intervalId);
+    intervalId = null;
+};
 
-document.querySelector("#start").addEventListener
-('click1', stopChangingColor)
+document.querySelector('#start').addEventListener
+('click', startChangingColor)
+
+document.querySelector('#stop').addEventListener
+('click', stopChangingColor)
