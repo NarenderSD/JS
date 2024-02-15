@@ -5,18 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Closure </title>
 </head>
-<body>
+<body style="background-color: #313131;">
     
 </body>
 <script>
-    function init() {
-    var name = "Mozilla"; 
-    function displayName() {
-       console.log(name); 
-  }
-  displayName();
+//     function init() {
+//     var name = "Mozilla"; 
+//     function displayName() {
+//        console.log(name); 
+//   }
+//   displayName();
+// }
+// init();
+
+function outer(){
+    let username = "Narender"
+    console.log("OUTER", secret);
+    function inner(){
+        let secret = "my123"
+        console.log("inner", username);
+    }
+    function innerTwo(){
+        console.log("innerTwo", username);
+        console.log(secret);
+    }
+    inner()
+    innerTwo()
 }
-init();
+outer()
+console.log("TOO OUTER", username);
 
 </script>
 </html>
